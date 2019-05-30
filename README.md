@@ -1,9 +1,12 @@
 # notificaiton-clockify-to-slack
 This script get clockify time entries and send them to slack webhook notificaton.
 
-## how to use
+## Sample result
+<img width="491" alt="sample-result" src="https://user-images.githubusercontent.com/2556855/58643035-758c1500-8339-11e9-942f-51196b336764.png">
 
-### prerequisite
+## How to use
+
+### Prerequisite
 This script is python program.
 
 ```
@@ -17,16 +20,16 @@ requests
 urllib3
 ```
 
-### step0: Install python3.6.x
+### Step0: Install python3.6.x
 Omit
 
-### step1: Install python packages
+### Step1: Install python packages
 
 ```
 pip install -r requirements.txt
 ```
 
-### step2: Configure a config.ini file
+### Step2: Configure a config.ini file
 
 ```
 [clockify]
@@ -37,7 +40,7 @@ api_token = xxxxxxxxxx         # your Clockify api token
 webhook_url = https://hooks.slack.com/services/xxxxxx/xxxxxx/xxxxxxxxxxxxxx # slack webhook url
 ```
 
-### step3: Run scrpit
+### Step3: Run scrpit
 
 ```
 $ python main.py
