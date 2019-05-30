@@ -35,7 +35,7 @@ pip install -r requirements.txt
 [clockify]
 workspace_name = my workspace  # your Clockify workspace name
 api_token = xxxxxxxxxx         # your Clockify api token
-
+interval = 5                   # time(min.) should the same value of cron preodic time for this script
 [slack]
 webhook_url = https://hooks.slack.com/services/xxxxxx/xxxxxx/xxxxxxxxxxxxxx # slack webhook url
 ```
@@ -44,4 +44,10 @@ webhook_url = https://hooks.slack.com/services/xxxxxx/xxxxxx/xxxxxxxxxxxxxx # sl
 
 ```
 $ python main.py
+```
+
+### Step4: Set the script in the cronjob
+You should configure that the periodic time of the cronjob is the same as the interval in the config.ini file.
+```
+*/5 * * * * /home/ubuntu/.pyenv/shims/python /home/ubuntu/notification-clockify-to-slack/main.py >> /home/ubuntu/success.log 2>> /home/ubuntu/fail.log
 ```
